@@ -11,17 +11,17 @@
  */
 
 public class Percolation {
-    WeightedQuickUnionUF grid[];
-    boolean state[];
-    int size;
+    private WeightedQuickUnionUF[] grid;
+    private boolean[] state;
+    private int size;
     
     public Percolation(int N) {  /**
      * create N by N grid with all sites blocked
      * the integer N must be > 0 and determines the size of the grid
      * @param N specifies the size of the square grid to create
      */
-        grid = new WeightedQuickUnionUF[N*N];
-        state = new boolean[N*N];
+        grid = new WeightedQuickUnionUF [N*N];
+        state = new boolean [N*N];
         size = N;
     }
     
@@ -61,11 +61,11 @@ public class Percolation {
     public static void main(String[] args) {
         int N = Integer.parseInt(args[0]);
         Percolation percolator = new Percolation(N);
-        percolator.open(1,1);
-        percolator.open(0,0);
+        percolator.open(1, 1);
+        percolator.open(0, 0);
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
-                StdOut.println(percolator.isOpen(i,j));
+                StdOut.println(percolator.isOpen(i, j));
             }
         }
     }
