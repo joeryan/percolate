@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20140826-r5761">
+  <project autorefresh="false" main="Percolation" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="tests/PercolationTest.java" package="" timestamp="18-Sep-2014 13:53:05">
+        <select from="754" to="754"/>
+        <scroll column="107" row="0"/>
+      </file>
+      <file name="Percolation.java" package="" timestamp="18-Sep-2014 13:53:42">
+        <select from="754" to="754"/>
+        <scroll column="107" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>
