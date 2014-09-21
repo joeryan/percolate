@@ -3,13 +3,17 @@
   <project autorefresh="false" main="Percolation" root="" work="">
     <createjar file=""/>
     <source>
-      <file active="true" name="tests/PercolationTest.java" package="" timestamp="18-Sep-2014 13:53:05">
-        <select from="754" to="754"/>
-        <scroll column="107" row="0"/>
+      <file active="true" name="tests/PercolationTest.java" package="" timestamp="20-Sep-2014 21:24:54">
+        <select from="465" to="465"/>
+        <scroll column="60" row="0"/>
       </file>
-      <file name="Percolation.java" package="" timestamp="18-Sep-2014 13:53:42">
-        <select from="754" to="754"/>
-        <scroll column="107" row="0"/>
+      <file name="WeightedQuickUnionUF.java" package="" timestamp="17-Sep-2014 21:21:08">
+        <select from="465" to="465"/>
+        <scroll column="60" row="0"/>
+      </file>
+      <file name="Percolation.java" package="" timestamp="20-Sep-2014 22:26:24">
+        <select from="465" to="465"/>
+        <scroll column="60" row="0"/>
       </file>
     </source>
     <included/>

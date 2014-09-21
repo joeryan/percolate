@@ -11,18 +11,24 @@
  */
 
 public class Percolation {
+    WeightedQuickUnionUF grid[];
+    boolean state[];
+    int size;
+    
     public Percolation(int N) {  /**
      * create N by N grid with all sites blocked
      * the integer N must be > 0 and determines the size of the grid
      * @param N specifies the size of the square grid to create
      */
-        // TODO
+        grid = new WeightedQuickUnionUF[N*N];
+        state = new boolean[N*N];
+        size = N;
     }
     
     public void open(int i, int j) {  /**
      * opens the site (row i, column j) if it not already open
      */
-        // TODO
+        if (!isOpen(i, j)) { state[i*size+j] = true; }
     }
     
     public boolean isOpen(int i, int j) {  /**
@@ -32,9 +38,8 @@ public class Percolation {
      * @param j column for site being checked
      */
        
-        // TODO actual check
+        return state[i*size+j];
        
-        return true; // TODO fix return stub
     }
     public boolean isFull(int i, int j) {  /**
      * is site (row i, column j) full?
@@ -51,6 +56,18 @@ public class Percolation {
      */
         // TODO
         return true; // TODO fix return stub
+    }
+
+    public static void main(String[] args) {
+        int N = Integer.parseInt(args[0]);
+        Percolation percolator = new Percolation(N);
+        percolator.open(1,1);
+        percolator.open(0,0);
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                StdOut.println(percolator.isOpen(i,j));
+            }
+        }
     }
 }
     
