@@ -8,17 +8,28 @@
   * the 95% confidence interval as an upper and lower range
   */
 
+
 public class PercolationStats {
     /** PercolationStats N-size experiments -> mean, stddev, 95% to stdout
       * throws IllegalArgumentException if either N <= 0 or T <= 0
       */
+    private Percolation percolator;
+    private int tests, gridSize;
+    
     public PercolationStats(int N, int T) throws IllegalArgumentException {
         /** perform T independent coputational experiments on an N-by-N grid
           * Throws IllegalArgumentException if either N <= 0 or T <= 0
           * @param N size of grid to perform experiments on 
           * @param T number of independent simulations to perform
           */
-        // TODO
+        if (N < 1 || T < 1) {
+            throw new IllegalArgumentException("N and T must be greater than 0");
+        }
+        gridSize = N;
+        tests = T;
+        for (int i = 1; i <= tests; i++) {
+            percolator = new Percolation(gridSize);
+        }
     }
     
     public double mean() {
@@ -55,8 +66,23 @@ public class PercolationStats {
           * @param args[] String command line argument to provide two parameters
           * N and T to provide size of grid and number of simulations to run
           */
-        // TODO
-        System.out.println("Test complete!");
+        PercolationStats tester;
+        int tests, size;
+        
+        if (args.length < 2) {
+            tests = 2;
+            size = 2;
+        } else {
+            tests = Integer.parseInt(args[0]);
+            size = Integer.parseInt(args[1]);
+        }
+        tester = new PercolationStats(size, tests);
+        System.out.println(tests + " tests complete, on " + size + " by " 
+                               + size + " grid");
+        System.out.println("High confidence: " + tester.confidenceHi());
+        System.out.println("Low confidence: " + tester.confidenceLo());
+        System.out.println("Standard Deviation: " + tester.stddev());
+        System.out.println("Mean: " + tester.mean());
     }
 }
         
